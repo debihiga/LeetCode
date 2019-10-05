@@ -1,4 +1,4 @@
-package com.debihiga.leetcode.easy.n232implementqueueusingstacks;
+package com.debihiga.leetcode.easy.n0232implementqueueusingstacks;
 
 import java.util.Stack;
 

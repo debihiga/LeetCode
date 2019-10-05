@@ -1,11 +1,9 @@
-package com.debihiga.leetcode.easy.n232implementqueueusingstacks;
-
-import java.util.LinkedList;
-import java.util.Stack;
+package com.debihiga.leetcode.easy.n0232implementqueueusingstacks;
 
 /**
  * 232 - Implement Queue Using Stacks
  * ==================================
+ * https://leetcode.com/problems/implement-queue-using-stacks/
  *
  * Implement the following operations of a queue using stacks.
  * push(x) -- Push element x to the back of queue.
