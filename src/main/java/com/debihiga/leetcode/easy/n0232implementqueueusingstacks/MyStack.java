@@ -10,7 +10,11 @@ import java.util.Stack;
  * */
 public class MyStack implements MyQueue {
 
-    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> stack;
+
+    MyStack() {
+        this.stack = new Stack<Integer>();
+    }
 
     // Push element on the top of the stack
     public void push(int x) {

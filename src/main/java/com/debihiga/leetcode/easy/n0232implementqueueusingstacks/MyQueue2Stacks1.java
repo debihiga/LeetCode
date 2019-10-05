@@ -6,7 +6,7 @@ public class MyQueue2Stacks1 implements MyQueue {
 
     private Stack<Integer> stack;
 
-    public MyQueue2Stacks1() {
+    MyQueue2Stacks1() {
         this.stack = new Stack<Integer>();
     }
 

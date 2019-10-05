@@ -9,7 +9,7 @@ public class MyLinkedList implements MyQueue {
 
     private LinkedList<Integer> queue;
 
-    public MyLinkedList() {
+    MyLinkedList() {
         this.queue = new LinkedList<Integer>();
     }
 

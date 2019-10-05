@@ -8,7 +8,7 @@ public class MyQueue2Stacks2 implements MyQueue {
     private Stack<Integer> stackReversed;
     private int front;
 
-    public MyQueue2Stacks2() {
+    MyQueue2Stacks2() {
         this.stack = new Stack<Integer>();
         this.stackReversed = new Stack<Integer>();
     }
