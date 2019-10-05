@@ -1,5 +1,8 @@
 package com.debihiga.leetcode.easy.n0232implementqueueusingstacks;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 /**
  * 232 - Implement Queue Using Stacks
  * ==================================
@@ -33,28 +36,25 @@ package com.debihiga.leetcode.easy.n0232implementqueueusingstacks;
  * + You may assume that all operations are valid
  * (for example, no pop or peek operations will be called on an empty queue).
  * */
-public class Main {
+public abstract class ImplementQueueUsingStacksBase {
 
-    public static void main(String args[]) {
-        // Queue with Linked List
-        System.out.println("LinkedList example output.");
-        runTest(new MyLinkedList());        // 43 ms
+    MyQueue queue;
 
-        // Queue with Stack
-        System.out.println("Stack example output.");
-        runTest(new MyStack());             // X
-        System.out.println("MyQueue1Stack example output.");
-        runTest(new MyQueue1Stack());       // 45 ms
-        runTest(new MyQueue2Stacks1());     // 42 ms
-        runTest(new MyQueue2Stacks2());     // 43 ms
-    }
-
-    private static void runTest(MyQueue queue) {
+    void setUp(MyQueue queue) {
         queue.push(1);
         queue.push(2);
-        System.out.println(queue.peek());   // returns 1
-        System.out.println(queue.pop());    // returns 1
-        System.out.println(queue.empty());  // returns false
+    }
+
+    void testPeek() {
+        assertEquals(1, queue.pop());
+    }
+
+    void testPop() {
+        assertEquals(1, queue.pop());
+    }
+
+    void testEmpty() {
+        assertFalse(queue.empty());
     }
 
 }

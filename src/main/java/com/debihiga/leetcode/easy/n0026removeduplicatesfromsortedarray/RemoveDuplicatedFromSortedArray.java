@@ -10,10 +10,10 @@ package com.debihiga.leetcode.easy.n0026removeduplicatesfromsortedarray;
  * you will need to shift all the elements, that are after the element that has to be removed,
  * to the left to fill the gap left by the removed element.
  * */
-public class Main {
+public class RemoveDuplicatedFromSortedArray {
 
     public static void main(String args[]) {
-        Main main = new Main();
+        RemoveDuplicatedFromSortedArray main = new RemoveDuplicatedFromSortedArray();
         // https://www.codementor.io/eh3rrera/using-java-8-method-reference-du10866vx
         // Using an anonymous class
         main.runAllTests(new RemoveDuplicates() {
