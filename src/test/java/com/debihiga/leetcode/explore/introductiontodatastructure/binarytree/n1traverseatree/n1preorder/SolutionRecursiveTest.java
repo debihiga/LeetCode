@@ -4,11 +4,11 @@ package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1t
 import org.junit.Before;
 import org.junit.Test;
 
-public class SolutionImpl1Test extends PreOrderBase {
+public class SolutionRecursiveTest extends PreOrderBase {
 
     @Before
     public void setUp() {
-        solution = new SolutionImpl1();
+        solution = new SolutionRecursive();
     }
 
     @Test

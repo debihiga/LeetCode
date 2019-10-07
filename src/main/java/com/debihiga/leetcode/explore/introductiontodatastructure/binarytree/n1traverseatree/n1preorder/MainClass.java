@@ -78,7 +78,7 @@ public class MainClass {
         while ((line = in.readLine()) != null) {
             TreeNode root = stringToTreeNode(line);
 
-            List<Integer> ret = new SolutionImpl1().preorderTraversal(root);
+            List<Integer> ret = new SolutionRecursive().preorderTraversal(root);
 
             String out = integerArrayListToString(ret);
 

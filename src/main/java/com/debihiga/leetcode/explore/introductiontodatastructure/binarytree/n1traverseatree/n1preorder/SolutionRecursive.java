@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Recursively
-class SolutionImpl1 implements Solution {
+class SolutionRecursive implements Solution {
 
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> nodes = new ArrayList<>();
         if (root!=null) {
+            // Top
             nodes.add(root.val);
+            // Left
             getSideNodes(root.left, nodes);
+            // Right
             getSideNodes(root.right, nodes);
         }
         return nodes;
