@@ -12,14 +12,15 @@ public class SolutionIterations implements Solution {
         List<Integer> nodes = new ArrayList<>();
         if (root!=null) {
             Stack<TreeNode> stack = new Stack<>();
-            while(!stack.isEmpty() || root != null){
-                if(root != null){
-                    stack.push(root);
-                    nodes.add(0, root.val);
-                    root = root.right;
-                }else{
-                    root = stack.pop();
-                    root = root.left;
+            stack.add(root);
+            while (!stack.isEmpty()) {
+                TreeNode node = stack.pop();
+                nodes.add(0, node.val);
+                if (node.left != null) {
+                    stack.add(node.left);
+                }
+                if (node.right != null) {
+                    stack.add(node.right);
                 }
             }
         }
