@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertThat;
 
-public class PreOrderBase {
+public abstract class PreOrderBase {
 
     Solution solution;
 

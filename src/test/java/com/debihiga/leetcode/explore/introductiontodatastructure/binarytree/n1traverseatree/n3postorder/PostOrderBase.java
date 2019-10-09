@@ -1,4 +1,4 @@
-package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.n2inorder;
+package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.n3postorder;
 
 import com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.TreeNode;
 import org.hamcrest.CoreMatchers;
@@ -7,18 +7,18 @@ import java.util.List;
 
 import static org.junit.Assert.assertThat;
 
-public abstract class InOrderBase {
+public abstract class PostOrderBase {
 
     Solution solution;
 
     /**
      * Input: [1,null,2,3]
-     * 1
-     *  \
-     *   2
-     *  /
-     * 3
-     * Output: [1,3,2]
+     *    1
+     *     \
+     *      2
+     *     /
+     *    3
+     * Output: [3,2,1]
      * */
     public void test1() {
         // Setup
@@ -28,22 +28,8 @@ public abstract class InOrderBase {
         n1.right = n2;
         n2.left = n3;
         // Run
-        List<Integer> result = solution.inorderTraversal(n1);
+        List<Integer> result = solution.postorderTraversal(n1);
         // Test
-        assertThat(result, CoreMatchers.hasItems(1,3,2));
+        assertThat(result, CoreMatchers.hasItems(3,2,1));
     }
-
-    /**
-     * Input: [2,3,null,1]
-     *     2
-     *    /
-     *   3
-     *  /
-     * 1
-     * Output: [1,3,2]
-     * */
-    public void test2() {
-        //
-    }
-
 }

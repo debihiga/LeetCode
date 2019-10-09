@@ -1,4 +1,4 @@
-package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.n2inorder;
+package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.n3postorder;
 
 import com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.TreeNode;
 
@@ -7,22 +7,22 @@ import java.util.List;
 
 public class SolutionRecursive implements Solution {
     @Override
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> nodes = new ArrayList<>();
         if (root!=null) {
             // Left
             getSideNodes(root.left, nodes);
-            // Top
-            nodes.add(root.val);
             // Right
             getSideNodes(root.right, nodes);
+            // Top
+            nodes.add(root.val);
         }
         return nodes;
     }
 
     private void getSideNodes(TreeNode root, List<Integer> nodes) {
         if (root!=null) {
-            List<Integer> sideNodes = inorderTraversal(root);
+            List<Integer> sideNodes = postorderTraversal(root);
             nodes.addAll(sideNodes);
         }
     }

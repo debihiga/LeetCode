@@ -3,11 +3,16 @@ package com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1t
 import com.debihiga.leetcode.explore.introductiontodatastructure.binarytree.n1traverseatree.TreeNode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
 // Iteratively
+/*
+ * To be cautious, the complexity might be different due to a different implementation.
+ * It is comparatively easy to do traversal recursively but when the depth of the tree is too large,
+ * we might suffer from stack overflow problem.
+ * That's one of the main reasons why we want to solve this problem iteratively sometimes.
+ * */
 public class SolutionlIterations implements Solution {
 
     /*
