@@ -3,31 +3,24 @@ package com.debihiga.leetcode.explore.a30dayleetcodingchallenge.week3.productofa
 import com.debihiga.leetcode.explore.a30dayleetcodingchallenge.week3.productofarrayexceptself.Solution;
 
 // O(n)
-// Division
-public class Solution2 extends Solution {
+// Without division
+public class Solution3 extends Solution {
     public int[] productExceptSelf(int[] nums) {
-        int totalProduct = 1;
-        int nZeroes = 0;
+        int[] productsToRight = new int[nums.length];
+        int[] productsToLeft = new int[nums.length];
         for(int i=0; i<nums.length; i++) {
-            if(nums[i]==0) {
-                nZeroes++;
-            } else {
-                totalProduct *= nums[i];
-            }
-            if(1<nZeroes) {
-                break;
-            }
+            // To right
+            int lastProductToRight = 0<i? productsToRight[i-1] : 1;
+            productsToRight[i] = lastProductToRight * nums[i];
+            // To left
+            int j = nums.length - 1 - i;
+            int lastProductToLeft = j<nums.length-1? productsToLeft[j+1] : 1;
+            productsToLeft[j] = lastProductToLeft * nums[j];
         }
         for(int i=0; i<nums.length; i++) {
-            if(nZeroes==0) {
-                nums[i] = totalProduct / nums[i];
-            } else if(nZeroes==1 && nums[i]!=0) {
-                nums[i] = 0;
-            } else if(nZeroes==1 && nums[i]==0) {
-                nums[i] = totalProduct;
-            } else if(1<nZeroes) {
-                nums[i] = 0;
-            }
+            int productToRight = 0<i? productsToRight[i-1] : 1;
+            int productToLeft = i<nums.length-1? productsToLeft[i+1] : 1;
+            nums[i] = productToRight*productToLeft;
         }
         return nums;
     }

@@ -2,19 +2,33 @@ package com.debihiga.leetcode.explore.a30dayleetcodingchallenge.week3.productofa
 
 import com.debihiga.leetcode.explore.a30dayleetcodingchallenge.week3.productofarrayexceptself.Solution;
 
-// O(n^2)
-public class Solution1 extends Solution {
+// O(n)
+// Division
+public class Solution2 extends Solution {
     public int[] productExceptSelf(int[] nums) {
-        int[] result = new int[nums.length];
+        int totalProduct = 1;
+        int nZeroes = 0;
         for(int i=0; i<nums.length; i++) {
-            int product = 1;
-            for(int j=0; j<nums.length; j++) {
-                if(i!=j) {
-                    product *= nums[j];
-                }
+            if(nums[i]==0) {
+                nZeroes++;
+            } else {
+                totalProduct *= nums[i];
             }
-            result[i] = product;
+            if(1<nZeroes) {
+                break;
+            }
         }
-        return result;
+        for(int i=0; i<nums.length; i++) {
+            if(nZeroes==0) {
+                nums[i] = totalProduct / nums[i];
+            } else if(nZeroes==1 && nums[i]!=0) {
+                nums[i] = 0;
+            } else if(nZeroes==1 && nums[i]==0) {
+                nums[i] = totalProduct;
+            } else if(1<nZeroes) {
+                nums[i] = 0;
+            }
+        }
+        return nums;
     }
 }
